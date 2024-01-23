@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //añadimos la animacion al viewPager
+        viewPager.setPageTransformer(true, new DepthPageTransformer());
+
         // Listener para cambios de selección en el TabLayout
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
