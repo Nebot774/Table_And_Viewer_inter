@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -43,7 +44,9 @@ public class fragment2  extends Fragment {
 
         //componentes recycled
         recyclerView = view.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        // Cambia a GridLayoutManager con 2 columnas
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 2));
 
         // Inicializa la lista de modelos
         myModelList = new ArrayList<>();
@@ -52,12 +55,13 @@ public class fragment2  extends Fragment {
         myModelList.add(new MyModel(R.drawable.fre2, "Segunda Forma"));
         myModelList.add(new MyModel(R.drawable.fre3, "Tercera Forma"));
         myModelList.add(new MyModel(R.drawable.fre4, "Forma definitiva"));
+        myModelList.add(new MyModel(R.drawable.fre100, "Frezzer 100% de poder"));
         myModelList.add(new MyModel(R.drawable.fre5, "Golden Freezer"));
-
 
         // Configura el adaptador y lo asigna al RecyclerView
         adapter = new MyAdapter(myModelList);
         recyclerView.setAdapter(adapter);
     }
+
 
 }
